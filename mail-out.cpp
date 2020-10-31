@@ -20,14 +20,18 @@ string getNewFileName(string filePath){
     int numFiles = 0;
     stringstream ss;
     ss << setw(5);
-    DIR* dirp = opendir(filePath.c_str());
-    struct dirent * dp;
-    while ((dp = readdir(dirp)) != NULL) {
-        ss << (dp -> d_name);
-        ss >> i;
-        cout << ss.str() << endl;
-        max_num = max(max_num,i);
-        numFiles++;
+    // DIR* dirp = opendir(filePath.c_str());
+    // struct dirent * dp;
+    // while ((dp = readdir(dirp)) != NULL) {
+    //     ss << (dp -> d_name);
+    //     ss >> i;
+    //     cout << ss.str() << endl;
+    //     max_num = max(max_num,i);
+    //     numFiles++;
+    // }
+    for (auto& file : std::filesystem::directory_iterator{ filePath.c_str() })  //loop through the current folder
+    {
+        cout << file.path() << endl;
     }
     stringstream res;
     if(numFiles == 2) {return "00000";}
