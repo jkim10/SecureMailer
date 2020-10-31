@@ -1,0 +1,7 @@
+mail from:<scerne>
+RCPT TO:<scerne>
+RCPT TO:<annalistic>
+DATA
+Hello World!
+..Hello World Again!
+.

@@ -1,0 +1,19 @@
+MAIL FROM: <tester>
+RCPT to: <wamara>
+DATA
+MAIL FROM: <tester>
+RCPT to: <wamara>
+DATA
+MAIL FROM: <tester>
+RCPT to: <wamara>
+DATA
+MAIL FROM: <tester>
+RCPT to: <wamara>
+DATA
+MAIL FROM: <tester>
+RCPT to: <wamara>
+DATA
+MAIL FROM: <tester>
+RCPT to: <wamara>
+DATA
+.
