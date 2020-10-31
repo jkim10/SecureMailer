@@ -7,6 +7,10 @@ fi
 cd $1
 for i in inputs/*
 do
+  echo "===================="
+  echo "Testing: $i"
+  echo "Output/Errors: "
 	./bin/mail-in <$i
+  echo "===================="
 done
 

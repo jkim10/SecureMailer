@@ -8,6 +8,8 @@ rm -rf "$1"
 mkdir "$1"
 cd $1
 mkdir bin mail inputs tmp
-while read p; do
+declare -a arr=("addleness" "analects" "annalistic" "anthropomorphologically" "blepharosphincterectomy" "corector" "durwaun" "dysphasia" "encampment" "endoscopic" "exilic" "forfend" "gorbellied" "gushiness" "muermo" "neckar" "outmate" "outroll" "overrich" "philosophicotheological" "pockwood" "polypose" "refluxed" "reinsure" "repine" "scerne" "starshine" "unauthoritativeness" "unminced" "unrosed" "untranquil" "urushinic" "vegetocarbonaceous" "wamara" "whaledom")
+for p in "${arr[@]}"
+do
   mkdir "./mail/$p"
-done < ../mailbox_names.txt
+done

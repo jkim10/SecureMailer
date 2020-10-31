@@ -14,29 +14,17 @@ string left_padInt(int n){
     return x;
 }
 string getNewFileName(string filePath){
-    cout << "===========" << endl;
-    int max_num = -1;
-    int i;
     int numFiles = 0;
-    stringstream ss;
-    ss << setw(5);
-    // DIR* dirp = opendir(filePath.c_str());
-    // struct dirent * dp;
-    // while ((dp = readdir(dirp)) != NULL) {
-    //     ss << (dp -> d_name);
-    //     ss >> i;
-    //     cout << ss.str() << endl;
-    //     max_num = max(max_num,i);
-    //     numFiles++;
-    // }
-    for (auto& file : std::filesystem::directory_iterator{ filePath.c_str() })  //loop through the current folder
-    {
-        cout << file.path() << endl;
+    DIR* dirp = opendir(filePath.c_str());
+    struct dirent * dp;
+    while ((dp = readdir(dirp)) != NULL) {
+        string fn = (dp->d_name);
+        if( (fn != ".") && (fn != "..")){
+            numFiles++;
+        }
     }
     stringstream res;
-    if(numFiles == 2) {return "00000";}
-    res << setw(5) << setfill('0') << (max_num+1);
-    cout << "===========" << endl;
+    res << setw(5) << setfill('0') << (numFiles);
     return res.str();
 }
 
